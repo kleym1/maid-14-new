@@ -520,9 +520,9 @@
   description: Do not apply fire to this. Rumour says it burns easily.
   components:
   - type: Sprite
-    sprite: _Maid/Structures/Furniture/Tables/wood.rsi # Maid
+    sprite: _Maid/Structures/Furniture/Tables/wood_bright.rsi # Maid
   - type: Icon
-    sprite: _Maid/Structures/Furniture/Tables/wood.rsi # Maid
+    sprite: _Maid/Structures/Furniture/Tables/wood_bright.rsi # Maid
   - type: Damageable
     damageModifierSet: Wood
   - type: Destructible
@@ -566,20 +566,20 @@
     convertTo: CosmicTable
 
 - type: entity
-  id: TableWoodBright
+  id: TableWoodDark
   parent: TableWood
-  name: wood table bright
+  name: wood table Dark
   description: Do not apply fire to this. Rumour says it burns easily.
   components:
   - type: Sprite
-    sprite: _Maid/Structures/Furniture/Tables/wood_bright.rsi # Maid
+    sprite: _Maid/Structures/Furniture/Tables/wood.rsi # Maid 
   - type: Icon
-    sprite: _Maid/Structures/Furniture/Tables/wood_bright.rsi # Maid
+    sprite: _Maid/Structures/Furniture/Tables/wood.rsi # Maid 
   - type: IconSmooth
     key: woodtable
   - type: Construction
     graph: Table
-    node: TableWoodBright
+    node: TableWoodDark
 
 - type: entity
   id: TableCarpet

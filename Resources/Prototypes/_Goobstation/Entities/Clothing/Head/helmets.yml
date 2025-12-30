@@ -73,19 +73,6 @@
       HeadSide : HEAD
 
 - type: entity
-  parent: ClothingHeadHelmetBasic
-  id: ClothingHeadHelmetBasicAlt
-  suffix: Alt
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/Head/Helmets/security.rsi
-  - type: Clothing
-    sprite: _Goobstation/Clothing/Head/Helmets/security.rsi
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-
-- type: entity
   parent: [ ClothingHeadBase, BaseMajorContraband ]
   id: ReverseBearTrap
   name: reverse bear trap

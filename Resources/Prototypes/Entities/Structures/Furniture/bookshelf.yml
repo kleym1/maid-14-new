@@ -36,7 +36,7 @@
   description: Mostly filled with books.
   components:
   - type: Sprite
-    sprite: _Maid/Structures/Furniture/bookshelf.rsi # Maid
+    sprite: _Maid/Structures/Furniture/bookshelf_bright.rsi
     snapCardinals: true
     layers:
       - state: base
@@ -111,13 +111,13 @@
   - type: BlockWeather
 
 - type: entity
-  id: BookshelfBright
+  id: BookshelfDark
   parent: Bookshelf
   name: "bookshelf"
   description: Mostly filled with books.
   components:
   - type: Sprite
-    sprite: _Maid/Structures/Furniture/bookshelf_bright.rsi # Maid
+    sprite: _Maid/Structures/Furniture/bookshelf.rsi 
     snapCardinals: true
     layers:
       - state: base
@@ -128,5 +128,5 @@
     maxFillLevels: 21
     fillBaseName: book
   - type: Construction
-    graph: BookshelfBright
-    node: bookshelfBright
+    graph: BookshelfDark
+    node: bookshelfDark

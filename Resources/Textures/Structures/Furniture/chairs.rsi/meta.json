@@ -72,6 +72,10 @@
       "directions": 4
     },
     {
+      "name": "wooden-light",
+      "directions": 4
+    },
+    {
       "name": "wooden-bench",
       "directions": 4
     },

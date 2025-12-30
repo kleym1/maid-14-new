@@ -173,9 +173,9 @@
   description: Standard security gear. Protects the head from impacts.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/security.rsi
+    sprite: _Maid/Clothing/Head/Helmets/security.rsi
   - type: Clothing
-    sprite: Clothing/Head/Helmets/security.rsi
+    sprite: _Maid/Clothing/Head/Helmets/security.rsi
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -258,9 +258,9 @@
   description: It's a helmet specifically designed to protect against close range attacks.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/light_riot.rsi
+    sprite: _Maid/Clothing/Head/Helmets/light_riot.rsi
   - type: Clothing
-    sprite: Clothing/Head/Helmets/light_riot.rsi
+    sprite: _Maid/Clothing/Head/Helmets/light_riot.rsi
   - type: IngestionBlocker
   - type: Armor
     coverage:
@@ -692,102 +692,3 @@
  # - type: HideLayerClothing  #Goobstation
  #   layers:
  #     Hair: HEAD
-
-#Justice Helmet
-- type: entity
-  parent: [ClothingHeadHelmetArmoredBase, BaseSecurityContraband] # Goob edit
-  id: ClothingHeadHelmetJustice
-  name: justice helm
-  description: Advanced security gear. Protects the station from ne'er-do-wells.
-  components:
-  - type: Sprite
-    sprite: Clothing/Head/Helmets/justice.rsi
-    layers:
-      - state: icon
-      - state: icon-light
-        visible: false
-        shader: unshaded
-        map: [ "light" ]
-  - type: Appearance
-  - type: Clothing
-    sprite: Clothing/Head/Helmets/justice.rsi
-    equippedPrefix: off
-  - type: ItemToggle
-    predictable: false # issues between ToggleCellDraw and ItemToggleActiveSound
-    onUse: false
-    soundActivate:
-      path: /Audio/Items/flashlight_on.ogg
-    soundDeactivate:
-      path: /Audio/Items/flashlight_off.ogg
-    soundFailToActivate:
-      path: /Audio/Machines/button.ogg
-  - type: ItemToggleActiveSound
-    activeSound:
-      path: /Audio/Effects/Vehicle/policesiren.ogg
-      params:
-        volume: -4
-  - type: UseDelay
-    delay: 1.0
-  - type: ToggleClothing
-    action: ActionToggleJusticeHelm
-    mustEquip: false
-  - type: ItemTogglePointLight
-  - type: ToggleableVisuals
-    spriteLayer: light
-    clothingVisuals:
-      head:
-      - state: on-equipped-HELMET
-        shader: unshaded
-  - type: PointLight
-    enabled: false
-    radius: 1.4
-    energy: 1.4
-    color: red
-    netsync: false
-    mask: /Textures/Effects/LightMasks/double_cone.png
-  - type: RotatingLight
-    speed: 360
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellSmall
-  - type: PowerCellDraw
-    drawRate: 2
-  - type: ToggleCellDraw
-  - type: Construction
-    graph: HelmetJustice
-    node: helmet
-  - type: HideLayerClothing
-    layers:
-      Hair: HEAD
-
-- type: entity
-  parent: ClothingHeadHelmetJustice
-  id: ClothingHeadHelmetJusticeEmpty
-  suffix: Empty
-  components:
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-  - type: HideLayerClothing
-    layers:
-      Hair: HEAD
-
-- type: entity
-  parent: BaseAction
-  id: ActionToggleJusticeHelm
-  name: Toggle Justice Helm
-  description: Toggles the justice helm on and off.
-  components:
-  - type: Action
-    useDelay: 1
-    itemIconStyle: BigItem
-  - type: InstantAction
-    event: !type:ToggleActionEvent

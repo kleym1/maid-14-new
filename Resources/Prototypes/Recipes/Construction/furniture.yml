@@ -139,6 +139,18 @@
     - !type:TileNotBlocked
 
 - type: construction
+  id: ChairWoodDark
+  graph: Seat
+  startNode: start
+  targetNode: chairWoodDark
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
   id: ChairMeat
   graph: Seat
   startNode: start
@@ -310,10 +322,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: TableWoodBright
+  id: TableWoodDark
   graph: Table
   startNode: start
-  targetNode: TableWoodBright
+  targetNode: TableWoodDark
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -536,6 +548,18 @@
   conditions:
     - !type:TileNotBlocked
 
+- type: construction
+  id: DresserDark
+  graph: DresserDark
+  startNode: start
+  targetNode: dresserDark
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
 #racks
 - type: construction
   id: Rack
@@ -685,10 +709,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: BookshelfBright
-  graph: BookshelfBright
+  id: BookshelfDark
+  graph: BookshelfDark
   startNode: start
-  targetNode: bookshelfBright
+  targetNode: bookshelfDark
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter

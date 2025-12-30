@@ -34,3 +34,30 @@
           steps:
             - tool: Prying
               doAfter: 3
+
+- type: constructionGraph
+  id: DresserDark
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: dresserDark
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: WoodPlank
+              amount: 3
+              doAfter: 2
+    - node: dresserDark
+      entity: DresserDark
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank
+              amount: 3
+          steps:
+            - tool: Prying
+              doAfter: 3

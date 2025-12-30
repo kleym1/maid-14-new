@@ -370,7 +370,7 @@
   parent: UnanchoredChairBase
   components:
   - type: Sprite
-    state: wooden
+    state: wooden-light
   - type: Construction
     graph: Seat
     node: chairWood
@@ -407,6 +407,17 @@
     - Chair # Goob
   - type: StaticPrice
     price: 75
+
+- type: entity
+  name: dark wooden chair
+  id: ChairWoodDark
+  parent: ChairWood
+  components:
+  - type: Sprite
+    state: wooden
+  - type: Construction
+    graph: Seat
+    node: chairWoodDark
 
 - type: entity
   name: ritual chair

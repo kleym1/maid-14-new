@@ -27,8 +27,8 @@
         tableId: BookshelfEntityTable
 
 - type: entity
-  parent: BookshelfBright
-  id: BookshelfBrightFilled
+  parent: BookshelfDark
+  id: BookshelfDarkFilled
   suffix: random filled
   components:
   - type: EntityTableContainerFill

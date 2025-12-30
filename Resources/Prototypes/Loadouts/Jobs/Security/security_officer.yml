@@ -112,13 +112,6 @@
   equipment:
     head: ClothingHeadHelmetBasic
 
-
-- type: loadout # Goobstation
-  id: SecurityHelmetAlt
-  equipment:
-    head: ClothingHeadHelmetBasicAlt
-
-
 - type: loadout
   id: SecurityHat
   equipment:

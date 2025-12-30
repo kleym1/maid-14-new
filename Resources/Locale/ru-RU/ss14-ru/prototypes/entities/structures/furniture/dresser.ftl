@@ -3,3 +3,6 @@ ent-Dresser = комод
 ent-DresserFilled = { ent-Dresser }
     .suffix = Заполненный
     .desc = { ent-Dresser.desc }
+
+ent-DresserDark = тёмный комод
+    .desc = Деревянный комод, в котором можно хранить вещи, идеально подходит для нижнего белья и чьих-то почек?...

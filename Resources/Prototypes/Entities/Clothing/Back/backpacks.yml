@@ -124,7 +124,7 @@
   description: It's a very robust backpack.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/security.rsi
+    sprite: _Maid/Clothing/Back/Backpacks/security.rsi
 
 - type: entity
   parent: [ClothingBackpack, BaseSecurityContraband]

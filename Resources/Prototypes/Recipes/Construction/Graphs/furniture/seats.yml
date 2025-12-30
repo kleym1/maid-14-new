@@ -66,6 +66,11 @@
             - material: WoodPlank
               amount: 3
               doAfter: 1
+        - to: chairWoodDark
+          steps:
+            - material: WoodPlank
+              amount: 3
+              doAfter: 1
         - to: chairMeat
           steps:
             - material: MeatSheets
@@ -275,6 +280,18 @@
             - !type:SpawnPrototype
               prototype: MaterialSheetMeat1
               amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: chairWoodDark
+      entity: ChairWoodDark
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 3
           steps:
             - tool: Screwing
               doAfter: 1

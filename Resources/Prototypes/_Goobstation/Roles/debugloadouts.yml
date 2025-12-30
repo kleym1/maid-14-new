@@ -39,7 +39,7 @@
     gloves: ClothingHandsGlovesColorBlack
     shoes: ClothingShoesBootsJack
     outerClothing: ClothingOuterArmorBasic
-    head: ClothingHeadHelmetBasicAlt
+    head: ClothingHeadHelmetBasic
 
 - type: startingGear
   id: SecurityOfficerSuit
@@ -102,14 +102,14 @@
   parent: SecurityOfficerGearDebug
   equipment:
     outerClothing: ClothingOuterArmorBulletproof
-    head: ClothingHeadHelmetBasicAlt
+    head: ClothingHeadHelmetBasic
 
 - type: startingGear
   id: SecurityOfficerReflectiveArmorHelmet
   parent: SecurityOfficerGearDebug
   equipment:
     outerClothing: ClothingOuterArmorReflective
-    head: ClothingHeadHelmetBasicAlt
+    head: ClothingHeadHelmetBasic
 
 - type: startingGear
   id: BlueShieldOfficerGearDebug

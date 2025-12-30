@@ -108,7 +108,7 @@
               amount: 1
               doAfter: 1
 
-        - to: TableWoodBright
+        - to: TableWoodDark
           steps:
             - material: WoodPlank
               amount: 1
@@ -235,8 +235,8 @@
             - tool: Prying
               doAfter: 1
 
-    - node: TableWoodBright
-      entity: TableWoodBright
+    - node: TableWoodDark
+      entity: TableWoodDark
       edges:
         - to: TableFrame
           completed:

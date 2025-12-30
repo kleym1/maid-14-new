@@ -35,22 +35,22 @@
               doAfter: 4
 
 - type: constructionGraph
-  id: BookshelfBright
+  id: BookshelfDark
   start: start
   graph:
     - node: start
       actions:
         - !type:DestroyEntity {}
       edges:
-        - to: bookshelfBright
+        - to: bookshelfDark
           completed:
             - !type:SnapToGrid { }
           steps:
             - material: WoodPlank
               amount: 5
               doAfter: 4
-    - node: bookshelfBright
-      entity: BookshelfBright
+    - node: bookshelfDark
+      entity: BookshelfDark
       edges:
         - to: start
           completed:

@@ -9966,7 +9966,7 @@ entities:
     - type: Transform
       pos: 37.505653,15.28636
       parent: 1
-- proto: ClothingHeadHelmetBasicAlt
+- proto: ClothingHeadHelmetBasic
   entities:
   - uid: 3566
     components:
