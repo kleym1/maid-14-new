@@ -6,6 +6,6 @@
 - type: soundCollection
   id: ShuttleImpactSound
   files:
-    - "/Audio/Effects/Shuttle/shuttle_impact1.ogg"
-    - "/Audio/Effects/Shuttle/shuttle_impact2.ogg"
-    - "/Audio/Effects/Shuttle/shuttle_impact3.ogg"
+    - "/Audio/_Maid/Effects/Shuttle/shuttle_impact1.ogg"
+    - "/Audio/_Maid/Effects/Shuttle/shuttle_impact2.ogg"
+    - "/Audio/_Maid/Effects/Shuttle/shuttle_impact3.ogg"
