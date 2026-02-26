@@ -65,8 +65,9 @@
       - id: ClothingMaskBreath
       - id: EmergencyOxygenTankFilled
       - id: EmergencyMedipen
+      - id: Flare #Maid
       - id: SpaceMedipen
-      - id: FoodSnackNutribrick
+      - id: FoodTinMRE
       - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -84,7 +85,8 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -106,7 +108,8 @@
     - id: ExtendedEmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -124,7 +127,8 @@
     - id: ExtendedEmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -147,7 +151,8 @@
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -165,7 +170,8 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -188,7 +194,8 @@
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -206,7 +213,8 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -234,7 +242,8 @@
     - id: EmergencyFunnyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
   - type: Tag
     tags:
@@ -251,7 +260,8 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
   - type: Label
     currentLabel: reagent-name-nitrogen
@@ -267,7 +277,8 @@
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
 
 - type: entity
@@ -281,7 +292,8 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -301,7 +313,8 @@
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
     - id: DrinkWaterBottleFull
 
 - type: entity
@@ -317,7 +330,8 @@
     - id: ExtendedEmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
   - type: Sprite
     layers:
     - state: internals
@@ -334,7 +348,8 @@
     - id: ExtendedEmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodSnackNutribrick
+    - id: SpaceMedipen
+    - id: FoodTinMRE
   - type: Sprite
     layers:
     - state: internals

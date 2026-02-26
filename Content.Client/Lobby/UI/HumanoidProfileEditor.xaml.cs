@@ -164,6 +164,7 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._Maid.CVars;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -213,6 +214,7 @@ namespace Content.Client.Lobby.UI
         // CCvar.
         private int _maxNameLength;
         private bool _allowFlavorText;
+        private bool _heightSlidersEnabled; // Maid
 
         private FlavorText.FlavorText? _flavorText;
         private TextEdit? _flavorTextEdit;
@@ -294,6 +296,7 @@ namespace Content.Client.Lobby.UI
 
             _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
             _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
+            _cfgManager.OnValueChanged(MaidCVars.HeightSliders, OnHeightSlidersChanged, true); // Maid
 
             ImportButton.OnPressed += args =>
             {
@@ -394,14 +397,20 @@ namespace Content.Client.Lobby.UI
                 SetSpecies(_species[args.Id].ID);
                 UpdateHairPickers();
                 OnSkinColorOnValueChanged();
-                UpdateHeightWidthSliders(); // Goobstation: port EE height/width sliders
+                // Maid start
+                // UpdateHeightWidthSliders(); // Goobstation: port EE height/width sliders
+                ResetWidthAndHeight();
+                // Maid end
             };
 
             // begin Goobstation: port EE height/width sliders
             #region Height and Width
 
-            UpdateHeightWidthSliders();
-            UpdateDimensions(SliderUpdate.Both);
+            // Maid start
+            // UpdateHeightWidthSliders();
+            // UpdateDimensions(SliderUpdate.Both);
+            ResetWidthAndHeight();
+            // Maid end
 
             HeightSlider.OnValueChanged += _ => UpdateDimensions(SliderUpdate.Height);
             WidthSlider.OnValueChanged += _ => UpdateDimensions(SliderUpdate.Width);
@@ -972,8 +981,11 @@ namespace Content.Client.Lobby.UI
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
-            UpdateHeightWidthSliders(); // Goobstation: port EE height/width sliders
-            UpdateWeight(); // Goobstation: port EE height/width sliders
+            // Maid edit end
+            // UpdateHeightWidthSliders(); // Goobstation: port EE height/width sliders
+            // UpdateWeight(); // Goobstation: port EE height/width sliders
+            ResetWidthAndHeight();
+            // Maid edit end
 
             RefreshAntags();
             RefreshJobs();
@@ -1466,8 +1478,11 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
             // begin Goobstation: port EE height/width sliders
             // Changing species provides inaccurate sliders without these
-            UpdateHeightWidthSliders();
-            UpdateWeight();
+            // Maid edit start
+            // UpdateHeightWidthSliders();
+            // UpdateWeight();
+            ResetWidthAndHeight();
+            // Maid edit end
             // end Goobstation: port EE height/width sliders
             RefreshTraits(); // Goobstation: ported from DeltaV - Species trait exclusion
         }
@@ -1490,6 +1505,47 @@ namespace Content.Client.Lobby.UI
         }
 
         // begin Goobstation: port EE height/width sliders
+        // Maid start
+        private void ResetWidthAndHeight()
+        {
+            HeightLabel.Visible = _heightSlidersEnabled;
+            WidthLabel.Visible = _heightSlidersEnabled;
+            HeightSlider.Visible = _heightSlidersEnabled;
+            WidthSlider.Visible = _heightSlidersEnabled;
+            HeightReset.Visible = _heightSlidersEnabled;
+            WidthReset.Visible = _heightSlidersEnabled;
+
+            if (_heightSlidersEnabled)
+            {
+                UpdateHeightWidthSliders();
+                UpdateDimensions(SliderUpdate.Both);
+                return;
+            }
+
+            var species = Profile?.Species == null
+                ? _species.First()
+                : _species.Find(x => x.ID == Profile.Species) ?? _species.First();
+
+            Profile = Profile?.WithHeight(species.DefaultHeight);
+            Profile = Profile?.WithWidth(species.DefaultWidth);
+            UpdateWeight();
+            ReloadProfilePreview();
+            IsDirty = true;
+        }
+
+        public void Shutdown()
+        {
+            _cfgManager.UnsubValueChanged(MaidCVars.HeightSliders, OnHeightSlidersChanged);
+        }
+
+        private void OnHeightSlidersChanged(bool value)
+        {
+            RefreshSpecies();
+            _heightSlidersEnabled = value;
+            ResetWidthAndHeight();
+        }
+        // Maid end
+
         private void SetProfileHeight(float height)
         {
             Profile = Profile?.WithHeight(height);
@@ -1803,14 +1859,14 @@ namespace Content.Client.Lobby.UI
             //  TODO: Remove obsolete method
             _prototypeManager.Index(species.Prototype).TryGetComponent<FixturesComponent>(out var fixture, _entManager.ComponentFactory);
 
-            if (fixture != null)
-            {
-                var avg = (Profile.Width + Profile.Height) / 2;
-                var weight = FixtureSystem.GetMassData(fixture.Fixtures["fix1"].Shape, fixture.Fixtures["fix1"].Density).Mass * avg;
-                WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
-            }
-            else // Whelp, the fixture doesn't exist, guesstimate it instead
-                WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71));
+            // if (fixture != null) # Maid
+            // {
+            //     var avg = (Profile.Width + Profile.Height) / 2;
+            //     var weight = FixtureSystem.GetMassData(fixture.Fixtures["fix1"].Shape, fixture.Fixtures["fix1"].Density).Mass * avg;
+            //     WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
+            // }
+            // else // Whelp, the fixture doesn't exist, guesstimate it instead
+            //     WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71)); # Maid
 
             // SpriteViewS.InvalidateMeasure();
             // SpriteViewN.InvalidateMeasure();
@@ -1818,7 +1874,7 @@ namespace Content.Client.Lobby.UI
             // SpriteViewW.InvalidateMeasure();
             SpriteView.InvalidateMeasure();
         }
-        // end Goobstation: port EE height/width sliders
+        // end Goobstation: port EE height/width sliders # Maid
 
         private void UpdateHairPickers()
         {
